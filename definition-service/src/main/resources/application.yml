@@ -1,0 +1,19 @@
+---
+spring:
+  profiles:
+    active: msa
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafka:9092
+      bindings:
+        bpm-topic:
+          destination: bpm.topic
+          contentType: application/json
+
+
+server:
+  port: 8080
+  servletPath: /
+
