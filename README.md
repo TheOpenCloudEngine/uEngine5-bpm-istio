@@ -1,5 +1,13 @@
 # uEngine5-bpm-istio
 
+## Running in Kubernetes / Istio
+
+```
+cd definition-service
+docker build -t gcr.io/my-project-1531888882785/uengine-definition:v1 .
+
+```
+
 ## Local development enviroment
 
 Edit your hosts file to mimic the Kubernetes DNS service
