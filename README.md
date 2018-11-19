@@ -5,7 +5,7 @@
 ```
 cd definition-service
 docker build -t gcr.io/my-project-1531888882785/uengine-definition:v1 .
-
+docker push gcr.io/my-project-1531888882785/uengine-definition:v1
 ```
 
 ## Local development enviroment
@@ -14,7 +14,7 @@ Edit your hosts file to mimic the Kubernetes DNS service
 ```
 127.0.0.1       kafka
 127.0.0.1       uengine-definition
-127.0.0.1       uengine-instance
+127.0.0.1       uengine-process
 
 ```
 
