@@ -1,0 +1,58 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: 2018-11-19T17:56:07Z
+  generation: 1
+  labels:
+    run: uengine-definition
+  name: uengine-definition
+  namespace: default
+  resourceVersion: "19421485"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/uengine-definition
+  uid: 63d3cf16-ec24-11e8-9691-42010a80001e
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: uengine-definition
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: uengine-definition
+    spec:
+      containers:
+      - image: gcr.io/my-project-1531888882785/uengine-definition:v1
+        imagePullPolicy: IfNotPresent
+        name: uengine-definition
+        ports:
+        - containerPort: 9093
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: 2018-11-19T17:56:07Z
+    lastUpdateTime: 2018-11-19T17:56:07Z
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
