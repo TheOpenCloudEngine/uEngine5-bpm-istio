@@ -116,3 +116,20 @@ cd process-service
 mvn spring-boot:run -Dserver.port=9094
 
 ```
+
+
+
+# Deploy with Helm
+
+Test the helm chart:
+
+```
+cd helm-chart
+helm install --dry-run --debug --name uengine --namespace uengine helm-chart
+
+```
+
+Real deploy:
+```
+helm install --name uengine --namespace uengine helm-chart
+```
