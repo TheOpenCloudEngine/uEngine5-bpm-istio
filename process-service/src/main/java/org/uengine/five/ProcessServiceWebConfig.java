@@ -38,7 +38,6 @@ import java.util.Map;
 
 @EnableWebMvc
 @Configuration
-@Profile("msa")
 @ComponentScan(basePackageClasses = {ProcessDefinitionFactory.class, ProcessInstanceEntity.class, MetaworksRestService.class, ClassManager.class, MetadataService.class, MultitenantRepositoryImpl.class})
 @EnableJpaRepositories(basePackageClasses = {MultitenantRepositoryImpl.class, ProcessInstanceRepository.class})
 public class ProcessServiceWebConfig extends Metaworks4WebConfig {
