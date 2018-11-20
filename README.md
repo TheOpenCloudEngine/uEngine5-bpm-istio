@@ -3,9 +3,21 @@
 ## Running in Kubernetes / Istio
 
 ```
+mvn package -B -Dmaven.test.skip=true
+
 cd definition-service
 docker build -t gcr.io/my-project-1531888882785/uengine-definition:v1 .
 docker push gcr.io/my-project-1531888882785/uengine-definition:v1
+cd ..
+
+cd process-service
+docker build -t gcr.io/my-project-1531888882785/uengine-process:v1 .
+docker push gcr.io/my-project-1531888882785/uengine-process:v1
+cd ..
+
+cd 
+
+
 ```
 
 ## Local development enviroment

@@ -1,7 +1,4 @@
----
 spring:
-  profiles:
-    active: msa
   cloud:
     stream:
       kafka:
@@ -14,7 +11,7 @@ spring:
 
 
 server:
-  port: 8080
+  port: 9094
   servletPath: /
 #  ssl:
 #    key-store: src/test/resources/keystore.p12

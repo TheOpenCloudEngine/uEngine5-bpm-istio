@@ -1,7 +1,7 @@
----
+server:
+  port: 9093
+
 spring:
-  profiles:
-    active: msa
   cloud:
     stream:
       kafka:
@@ -11,9 +11,3 @@ spring:
         bpm-topic:
           destination: bpm.topic
           contentType: application/json
-
-
-server:
-  port: 9093
-  servletPath: /
-
