@@ -6,7 +6,8 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: kafka:9092
+          brokers: my-kafka:9092
+          zkNodes: my-kafka-zookeeper:2181
       bindings:
         bpm-topic:
           destination: bpm.topic

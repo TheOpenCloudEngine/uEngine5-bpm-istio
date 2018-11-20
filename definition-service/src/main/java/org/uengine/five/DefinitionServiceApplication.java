@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses = {DefinitionServiceImpl.class, AppGenerationService.class})
+@ComponentScan(basePackageClasses = {DefinitionServiceApplication.class, DefinitionServiceImpl.class, AppGenerationService.class})
 @EnableFeignClients(basePackageClasses = {AppService.class})
 public class DefinitionServiceApplication extends Metaworks4BaseApplication {
 

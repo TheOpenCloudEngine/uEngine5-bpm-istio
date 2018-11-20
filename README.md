@@ -97,10 +97,11 @@ To create a message in the above session, simply type the message and press "ent
 
 Edit your hosts file to mimic the Kubernetes DNS service
 ```
-127.0.0.1       kafka
+127.0.0.1       my-kafka
+127.0.0.1       my-kafka-zookeeper
 127.0.0.1       uengine-definition
 127.0.0.1       uengine-process
-
+127.0.0.1       bpm.uengine.io
 ```
 
 
