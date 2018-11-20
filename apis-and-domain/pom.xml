@@ -22,23 +22,6 @@
     <dependencies>
 
 
-        <dependency>
-            <groupId>org.uengine.metaworks</groupId>
-            <artifactId>metaworks4</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.uengine</groupId>
-            <artifactId>uengine-resource-manager</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.uengine</groupId>
-            <artifactId>uengine-bpmn-modeler</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -48,20 +31,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-
-
-        <!-- spring-kafka -->
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-            <version>${spring-kafka.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka-test</artifactId>
-            <version>${spring-kafka.version}</version>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
