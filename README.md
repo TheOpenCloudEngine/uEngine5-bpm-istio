@@ -3,11 +3,20 @@
 ## Running in Kubernetes / Istio
 
 ```
-mvn package -B -Dmaven.test.skip=true
+mvn clean package -B -Dmaven.test.skip=true
 
 cd definition-service
 docker build -t gcr.io/my-project-1531888882785/uengine-definition:v1 .
 docker push gcr.io/my-project-1531888882785/uengine-definition:v1
+
+kubectl create -f Deployment.yaml
+(Note:  you must change the image name as your one inside the yaml file)
+(kubectl run --image="gcr.io/my-project-1531888882785/uengine-definition:v1")
+
+kubectl create -f Service.yaml
+(kubectl expose deploy uengine-defintion --port="9093" --type="LoadBalancer")
+(kubectl get svc -w)
+
 cd ..
 
 cd process-service
