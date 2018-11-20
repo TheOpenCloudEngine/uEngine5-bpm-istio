@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2018-11-20T06:21:11Z
+  labels:
+    run: uengine-definition
+  name: uengine-definition
+  namespace: default
+  resourceVersion: "19586469"
+  selfLink: /api/v1/namespaces/default/services/uengine-definition
+  uid: 79bdf4e1-ec8c-11e8-9691-42010a80001e
+spec:
+  clusterIP: 10.43.250.104
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32464
+    port: 9092
+    protocol: TCP
+    targetPort: 9092
+  selector:
+    run: uengine-definition
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.188.135.235
