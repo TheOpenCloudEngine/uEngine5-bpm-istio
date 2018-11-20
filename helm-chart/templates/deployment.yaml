@@ -66,7 +66,7 @@ spec:
         run: uengine-process
     spec:
       containers:
-      - image: gcr.io/{{ .Values.image.projectId }}/uengine-process:{{ .Values.processService.image.tag }}
+      - image: gcr.io/{{ .Values.gce.projectId }}/uengine-process:{{ .Values.processService.image.tag }}
         imagePullPolicy: IfNotPresent
         name: uengine-process
         resources: {}
