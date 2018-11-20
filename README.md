@@ -22,11 +22,25 @@ cd ..
 
 cd process-service
 mvn clean package -B -Dmaven.test.skip=true
-docker build -t gcr.io/my-project-1531888882785/uengine-process:v7 .
-docker push gcr.io/my-project-1531888882785/uengine-process:v7
+docker build -t gcr.io/my-project-1531888882785/uengine-process:v8 .
+docker push gcr.io/my-project-1531888882785/uengine-process:v8
+kubectl set image deploy/uengine-process uengine-process=gcr.io/my-project-1531888882785/uengine-process:v8
 cd ..
 
-cd 
+cd proxy
+mvn clean package -B
+docker build -t gcr.io/my-project-1531888882785/uengine-proxy:v1 .
+docker push gcr.io/my-project-1531888882785/uengine-proxy:v1
+
+kubectl create -f Deployment.yaml
+(Note:  you must change the image name as your one inside the yaml file)
+(kubectl run --image="gcr.io/my-project-1531888882785/uengine-definition:v1")
+
+kubectl create -f Service.yaml
+(kubectl expose deploy uengine-defintion --port="9093" --type="LoadBalancer")
+(kubectl get svc -w)
+
+cd ..
 
 
 ```

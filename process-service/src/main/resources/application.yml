@@ -3,7 +3,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: my-kafka:2029
+          brokers: my-kafka:9092
           zkNodes: my-kafka-zookeeper:2181
       bindings:
         bpm-topic:
