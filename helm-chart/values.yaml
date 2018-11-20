@@ -1,0 +1,17 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+
+gce:
+  projectId: my-project-1531888882785
+
+definitionService:
+  image:
+    tag: v2
+
+processService:
+  image:
+    tag: v8

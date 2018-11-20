@@ -25,7 +25,7 @@ spec:
         run: uengine-definition
     spec:
       containers:
-      - image: gcr.io/{{ .Values.image.projectId }}/uengine-definition:{{ .Values.image.tag }}
+      - image: gcr.io/{{ .Values.gce.projectId }}/uengine-definition:{{ .Values.definitionService.image.tag }}
         imagePullPolicy: IfNotPresent
         name: uengine-definition
         ports:
@@ -66,7 +66,7 @@ spec:
         run: uengine-process
     spec:
       containers:
-      - image: gcr.io/{{ .Values.image.projectId }}/uengine-process:{{ .Values.image.tag }}
+      - image: gcr.io/{{ .Values.image.projectId }}/uengine-process:{{ .Values.processService.image.tag }}
         imagePullPolicy: IfNotPresent
         name: uengine-process
         resources: {}
