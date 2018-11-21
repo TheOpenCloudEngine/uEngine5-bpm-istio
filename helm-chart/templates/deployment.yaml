@@ -7,7 +7,6 @@ metadata:
   labels:
     run: uengine-definition
   name: uengine-definition
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -48,7 +47,6 @@ metadata:
   labels:
     run: uengine-process
   name: uengine-process
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -86,7 +84,6 @@ metadata:
   labels:
     run: uengine-proxy
   name: uengine-proxy
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -125,7 +122,6 @@ metadata:
   labels:
     run: uengine-front
   name: uengine-front
-  namespace: default
 spec:
   replicas: 1
   selector:
