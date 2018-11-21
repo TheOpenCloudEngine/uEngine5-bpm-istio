@@ -7,8 +7,8 @@ mvn clean package -B -Dmaven.test.skip=true
 
 cd definition-service
 mvn clean package -B
-docker build -t gcr.io/my-project-1531888882785/uengine-definition:v4 .
-docker push gcr.io/my-project-1531888882785/uengine-definition:v4
+docker build -t gcr.io/my-project-1531888882785/uengine-definition:v5 .
+docker push gcr.io/my-project-1531888882785/uengine-definition:v5
 
 kubectl create -f Deployment.yaml
 (Note:  you must change the image name as your one inside the yaml file)
@@ -22,8 +22,10 @@ cd ..
 
 cd process-service
 mvn clean package -B -Dmaven.test.skip=true
-docker build -t gcr.io/my-project-1531888882785/uengine-process:v10 .
-docker push gcr.io/my-project-1531888882785/uengine-process:v10
+docker build -t gcr.io/my-project-1531888882785/uengine-process:v11 .
+docker push gcr.io/my-project-1531888882785/uengine-process:v11
+
+
 kubectl set image deploy/uengine-process uengine-process=gcr.io/my-project-1531888882785/uengine-process:v8
 cd ..
 

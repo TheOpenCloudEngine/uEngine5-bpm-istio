@@ -10,11 +10,11 @@ gce:
 
 definitionService:
   image:
-    tag: v4
+    tag: v5
 
 processService:
   image:
-    tag: v10
+    tag: v11
 
 proxyService:
   image:
