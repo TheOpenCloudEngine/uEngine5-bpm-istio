@@ -10,8 +10,12 @@ gce:
 
 definitionService:
   image:
-    tag: v2
+    tag: v3
 
 processService:
   image:
-    tag: v8
+    tag: v9
+
+proxyService:
+  image:
+    tag: v1
