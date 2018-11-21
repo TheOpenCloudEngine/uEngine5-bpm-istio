@@ -3,8 +3,8 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: my-kafka:9092  # ${vcap.services.kakfa.host_port} and inject value from env variable
-          zkNodes: my-kafka-zookeeper:2181
+          brokers: uengine-kafka:9092  # ${vcap.services.kakfa.host_port} and inject value from env variable
+          zkNodes: uengine-kafka-zookeeper:2181
       bindings:
         bpm-topic:
           destination: bpm.topic
