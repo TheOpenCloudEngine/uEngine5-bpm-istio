@@ -7,7 +7,7 @@ spring:
       kafka:
         binder:
           brokers: uengine-kafka:9092
-          zkNodes: uengine-kafka-zookeeper:2181
+          zkNodes: uengine-zookeeper:2181
       bindings:
         bpm-topic:
           destination: bpm.topic
