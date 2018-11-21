@@ -7,7 +7,7 @@ metadata:
 spec:
   ports:
   - port: 9093
-    targetPort: http
+    targetPort: 9093
     protocol: TCP
     name: http
   selector:
@@ -24,7 +24,7 @@ metadata:
 spec:
   ports:
   - port: 9094
-    targetPort: http
+    targetPort: 9094
     protocol: TCP
     name: http
   selector:
@@ -40,7 +40,7 @@ metadata:
   name: uengine-proxy
 spec:
   ports:
-  - port: 8080
+  - port: 80
     targetPort: 8080
     protocol: TCP
     name: http
@@ -57,8 +57,8 @@ metadata:
   name: uengine-front
 spec:
   ports:
-  - port: 8080
-    targetPort: http
+  - port: 80
+    targetPort: 8080
     protocol: TCP
     name: http
   selector:
