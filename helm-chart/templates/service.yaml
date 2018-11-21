@@ -63,4 +63,4 @@ spec:
     name: http
   selector:
     run: uengine-front
-  type: ClusterIP
+  type: LoadBalancer

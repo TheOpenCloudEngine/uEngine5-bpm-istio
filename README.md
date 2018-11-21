@@ -7,8 +7,8 @@ mvn clean package -B -Dmaven.test.skip=true
 
 cd definition-service
 mvn clean package -B
-docker build -t gcr.io/my-project-1531888882785/uengine-definition:v1 .
-docker push gcr.io/my-project-1531888882785/uengine-definition:v1
+docker build -t gcr.io/my-project-1531888882785/uengine-definition:v4 .
+docker push gcr.io/my-project-1531888882785/uengine-definition:v4
 
 kubectl create -f Deployment.yaml
 (Note:  you must change the image name as your one inside the yaml file)
@@ -22,15 +22,15 @@ cd ..
 
 cd process-service
 mvn clean package -B -Dmaven.test.skip=true
-docker build -t gcr.io/my-project-1531888882785/uengine-process:v8 .
-docker push gcr.io/my-project-1531888882785/uengine-process:v8
+docker build -t gcr.io/my-project-1531888882785/uengine-process:v10 .
+docker push gcr.io/my-project-1531888882785/uengine-process:v10
 kubectl set image deploy/uengine-process uengine-process=gcr.io/my-project-1531888882785/uengine-process:v8
 cd ..
 
 cd proxy
 mvn clean package -B
-docker build -t gcr.io/my-project-1531888882785/uengine-proxy:v1 .
-docker push gcr.io/my-project-1531888882785/uengine-proxy:v1
+docker build -t gcr.io/my-project-1531888882785/uengine-proxy:v2 .
+docker push gcr.io/my-project-1531888882785/uengine-proxy:v2
 
 kubectl create -f Deployment.yaml
 (Note:  you must change the image name as your one inside the yaml file)
@@ -125,11 +125,11 @@ Test the helm chart:
 
 ```
 cd helm-chart
-helm install --dry-run --debug --name uengine --namespace uengine helm-chart
+helm install --dry-run --debug --name uengine --namespace uengine .
 
 ```
 
 Real deploy:
 ```
-helm install --name uengine --namespace uengine helm-chart
+helm install --name uengine --namespace uengine .
 ```
