@@ -56,7 +56,7 @@ zuul:
       url: http://uengine-process:9094
       stripPrefix: false
     instance-services:
-      path: /services/**
+      path: /service-definitions/**
       url: http://uengine-process:9094
       stripPrefix: false
     worklist-entity:

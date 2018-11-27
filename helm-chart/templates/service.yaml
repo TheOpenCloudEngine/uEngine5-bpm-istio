@@ -64,3 +64,19 @@ spec:
   selector:
     run: uengine-front
   type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: semantic-entity
+  name: semantic-entity
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    run: semantic-entity
+  type: ClusterIP
