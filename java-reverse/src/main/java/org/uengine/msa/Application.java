@@ -2,8 +2,6 @@ package org.uengine.msa;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
@@ -50,9 +48,6 @@ public class Application {
     public static final String GITLAB_SRC_ROOT_PATTERN = "/raw/master";
     @Autowired
     private Environment environment;
-
-    @Autowired
-    private HomeService homeService;
 
     private String getGitLabRelativeTemplateUrl(String sourceUrl, String templateFileName){
         int rootIndex = sourceUrl.indexOf(GITLAB_SRC_ROOT_PATTERN);
