@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "semantic-entity", url="http://semantic-entity:8080")
+@FeignClient(name = "semantic-entity", url="http://semantic-entity:9095")
 public interface SemanticEntityService {
 
     @RequestMapping(value = "/mean", method = RequestMethod.GET)

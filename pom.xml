@@ -25,10 +25,12 @@
     </properties>
 
     <modules>
-        <module>apis-and-domain</module>
+        <module>shared-kernel</module>
         <module>definition-service</module>
         <module>process-service</module>
         <module>proxy</module>
+        <module>semantic-entity</module>
+        <module>java-reverse</module>
     </modules>
 
     <dependencyManagement>
@@ -263,7 +265,12 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
-                    <imageName>${project.artifactId}</imageName>
+                    <imageName>gcr.io/${project.artifactId}:${project.version}</imageName>
+                    <forceTags>true</forceTags>
+                    <imageTags>
+                        <imageTag>${project.version}</imageTag>
+                        <imageTag>latest</imageTag>
+                    </imageTags>
                     <dockerDirectory>.</dockerDirectory>
                     <resources>
                         <resource>
@@ -273,6 +280,26 @@
                         </resource>
                     </resources>
                 </configuration>
+
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>push-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>push</goal>
+                        </goals>
+                        <!--<configuration>-->
+                            <!--<imageName>gcr.io/${project.artifactId}:${project.version}</imageName>-->
+                        <!--</configuration>-->
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
