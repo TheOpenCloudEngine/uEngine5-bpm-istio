@@ -133,5 +133,8 @@ helm install --dry-run --debug --name uengine --namespace uengine .
 
 Real deploy:
 ```
+cd helm-chart
+helm dependency update
+helm init
 helm install --name uengine --namespace uengine .
 ```

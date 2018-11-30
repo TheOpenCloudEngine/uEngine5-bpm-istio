@@ -101,7 +101,7 @@ spec:
         run: uengine-proxy
     spec:
       containers:
-      - image: jinyong/uengine-proxy
+      - image: jinyoung/uengine-proxy
         imagePullPolicy: IfNotPresent
         name: uengine-process
         resources: {}
