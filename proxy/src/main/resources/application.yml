@@ -52,10 +52,10 @@ zuul:
       url: http://uengine-process:9094
       stripPrefix: false
     instance-service:
-      path: /service/**
+      path: /services/**
       url: http://uengine-process:9094
       stripPrefix: false
-    instance-services:
+    instance-service-definitions:
       path: /service-definitions/**
       url: http://uengine-process:9094
       stripPrefix: false
