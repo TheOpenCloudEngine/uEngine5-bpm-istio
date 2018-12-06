@@ -3,3 +3,5 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
+backend:
+  host: bpm.uengine.io
