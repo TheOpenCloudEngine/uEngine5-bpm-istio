@@ -47,7 +47,7 @@ spec:
   selector:
     run: uengine-proxy
   type: LoadBalancer
-  {{- if $.Values.backend.ip }}
+  {{- if $.Values.backend }}
   loadBalancerIP: {{ .Values.backend.ip }}
   {{- end }}
 
@@ -67,7 +67,7 @@ spec:
   selector:
     run: uengine-front
   type: LoadBalancer
-  {{- if $.Values.frontend.ip }}
+  {{- if $.Values.frontend }}
   loadBalancerIP: {{ .Values.frontend.ip }}
   {{- end }}
 ---
