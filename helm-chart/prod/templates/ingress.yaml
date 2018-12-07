@@ -9,7 +9,7 @@ metadata:
      nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
      nginx.ingress.kubernetes.io/cors-allow-origin: "*"
      nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-     nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization,Authentication,access_token,client-ke$
+     nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization,Authentication,access_token,client-key,client-secret,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
 spec:
   rules:
   - http:
@@ -54,4 +54,5 @@ spec:
         backend:
           serviceName: uengine-process
           servicePort: 9094
+
 
