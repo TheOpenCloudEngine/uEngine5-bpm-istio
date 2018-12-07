@@ -126,14 +126,14 @@ mvn spring-boot:run -Dserver.port=9094
 Test the helm chart:
 
 ```
-cd helm-chart
+cd helm-chart/prod
 helm install --dry-run --debug --name uengine --namespace uengine .
 
 ```
 
 Real deploy:
 ```
-cd helm-chart
+cd helm-chart/prod
 helm dependency update
 helm init
 helm install --name uengine --namespace uengine .
