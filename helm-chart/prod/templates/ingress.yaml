@@ -1,0 +1,57 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: uengine-ingress
+  annotations:
+     #ingress.kubernetes.io/ssl-redirect: "false"
+     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+     nginx.ingress.kubernetes.io/enable-cors: "true"
+     nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+     nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization,Authentication,access_token,client-ke$
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /definition
+        backend:
+          serviceName: uengine-definition
+          servicePort: 9093
+      - path: /create-app
+        backend:
+          serviceName: uengine-definition
+          servicePort: 9093
+      - path: /version
+        backend:
+          serviceName: uengine-definition
+          servicePort: 9093
+      - path: /instance
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+      - path: /instances
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+      - path: /services
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+      - path: /service-definitions
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+      - path: /worklist
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+      - path: /work-item
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+      - path: /classdefinition
+        backend:
+          serviceName: uengine-process
+          servicePort: 9094
+

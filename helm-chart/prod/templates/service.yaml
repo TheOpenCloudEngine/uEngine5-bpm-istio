@@ -31,25 +31,25 @@ spec:
     run: uengine-process
   type: ClusterIP
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    run: uengine-proxy
-  name: uengine-proxy
-spec:
-  ports:
-  - port: 8080
-    targetPort: 8080
-    protocol: TCP
-    name: http
-  selector:
-    run: uengine-proxy
-  type: LoadBalancer
-  {{- if $.Values.backend }}
-  loadBalancerIP: {{ .Values.backend.ip }}
-  {{- end }}
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  labels:
+#    run: uengine-proxy
+#  name: uengine-proxy
+#spec:
+#  ports:
+#  - port: 8080
+#    targetPort: 8080
+#    protocol: TCP
+#    name: http
+#  selector:
+#    run: uengine-proxy
+#  type: LoadBalancer
+#  {{- if $.Values.backend }}
+#  loadBalancerIP: {{ .Values.backend.ip }}
+#  {{- end }}
 
 ---
 apiVersion: v1
@@ -70,6 +70,7 @@ spec:
   {{- if $.Values.frontend }}
   loadBalancerIP: {{ .Values.frontend.ip }}
   {{- end }}
+
 ---
 apiVersion: v1
 kind: Service
