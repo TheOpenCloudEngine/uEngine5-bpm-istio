@@ -1,0 +1,1 @@
+{"timestamp":1545360304144,"status":500,"error":"Internal Server Error","exception":"org.uengine.kernel.UEngineException","message":"Error when to load definition: codi/Class Enrollment.xml","path":"/definition/raw/Class%20Enrollment.json"}

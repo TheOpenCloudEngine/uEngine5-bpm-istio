@@ -138,3 +138,12 @@ helm dependency update
 helm init
 helm install --name uengine --namespace uengine .
 ```
+
+
+# Deploy Example Process Definitions
+```
+cd definitions
+http POST bpm.uengine.io/definition/raw/keyboard.json < keyboard.json
+http POST bpm.uegnine.io/definition/raw/class-design.json < class-design.json
+```
+* bpm.uengine.io is where your backend is redirected. Set your etc/hosts file for this.
