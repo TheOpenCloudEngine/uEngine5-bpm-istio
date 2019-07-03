@@ -27,6 +27,12 @@ module.exports = function (iam) {
     });
   };
   module.isAuthenticated = function (callback) {
+
+    // comment here if you have proper IAM server.
+//    callback(true);
+//    return;
+    // comment end
+
     if (!localStorage['access_token']) {
       callback(false);
     }
@@ -42,5 +48,6 @@ module.exports = function (iam) {
         callback(false);
       });
   };
+
   return module;
 };

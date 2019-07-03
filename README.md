@@ -95,12 +95,12 @@ To create a message in the above session, simply type the message and press "ent
 
 
 
-## Local development enviroment
+## Local development environment
 
 Edit your hosts file to mimic the Kubernetes DNS service
 ```
-127.0.0.1       my-kafka
-127.0.0.1       my-kafka-zookeeper
+127.0.0.1       uengine-kafka
+127.0.0.1       uengine-zookeeper
 127.0.0.1       uengine-definition
 127.0.0.1       uengine-process
 127.0.0.1       bpm.uengine.io
@@ -108,14 +108,50 @@ Edit your hosts file to mimic the Kubernetes DNS service
 
 
 
+Download and Run kafka firstly:
+
+- download:  https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.0/kafka_2.12-2.1.0.tgz
+
+- run:
+
+```
+(new shell)
+
+cd ~/Downloads/kafka_2.12-2.1.0
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+(new shell)
+
+cd ~/Downloads/kafka_2.12-2.1.0
+bin/kafka-server-start.sh config/server.properties
+
+```
+
+
 Run each service with mvn:
 ```
+
+(new shell)
+
 cd definition-service
 mvn spring-boot:run -Dserver.port=9093
-cd ..
+
+(new shell)
 
 cd process-service
 mvn spring-boot:run -Dserver.port=9094
+
+(new shell)
+
+cd proxy
+mvn spring-boot:run 
+
+(new shell)
+
+cd front-end
+npm install
+npm run dev
+
 
 ```
 

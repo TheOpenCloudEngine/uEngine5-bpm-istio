@@ -88,7 +88,7 @@ var profile = window.profile;
 
 //Change the url your IAM application's vcap service's profile url.
 //For example, 'http://' + config.vcap.services['your-iam-server'][profile].external;
-var iamUrl = 'http://iam.pas-mini.io';
+var iamUrl = 'http://iam:8081';
 
 //Define iam client
 var iam = new IAM(iamUrl);

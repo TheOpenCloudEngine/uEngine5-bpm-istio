@@ -6,11 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.*;
 import org.springframework.transaction.jta.JtaTransactionManager;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.uengine.cloud.services.AppService;
 import org.uengine.five.overriding.EventSendingDeployFilter;
 import org.uengine.five.service.*;
 import org.uengine.kernel.DeployFilter;
@@ -21,8 +19,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses = {DefinitionServiceApplication.class, DefinitionServiceImpl.class, AppGenerationService.class})
-@EnableFeignClients(basePackageClasses = {AppService.class})
+@ComponentScan(basePackageClasses = {DefinitionServiceApplication.class, DefinitionServiceImpl.class})
 public class DefinitionServiceApplication extends Metaworks4BaseApplication {
 
     /**

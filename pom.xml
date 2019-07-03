@@ -9,11 +9,11 @@
     </parent>
 
     <groupId>org.uengine</groupId>
-    <artifactId>uengine-five k8s deployables</artifactId>
+    <artifactId>uengine-five</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <name>uEngine5</name>
+    <name>uEngine5 k8s deployables</name>
 
     <properties>
         <!-- JDBC -->
@@ -30,6 +30,7 @@
         <module>process-service</module>
         <module>proxy</module>
         <module>semantic-entity</module>
+        <module>event-consumer</module>
         <!--<module>java-reverse</module>-->
     </modules>
 
